@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url(/assets/css/book-button-style.css);
 html, body {
   margin: 0;
   padding: 0;
@@ -12,6 +13,13 @@ a, button {
   cursor: grab; }
   a:focus, button:focus {
     outline: none; }
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important; }
 
 #home-page-container {
   font-family: "Cormorant Garamond", Times, serif;
@@ -47,7 +55,7 @@ a, button {
       display: block;
       padding: 15px 20px 15px;
       text-decoration: none;
-      color: #5e5e5e; }
+      color: #747474; }
       #page-header #my-navbar .navbar-item:hover {
         color: black; }
   #page-header #invisible-navbar-toggle {
@@ -72,14 +80,8 @@ a, button {
     #home-page-container .banner .banner-content h1 {
       font-family: "Dancing Script", cursive;
       text-align: center;
-      margin: 0 auto 20px;
-      font-size: 3.3rem; }
-    #home-page-container .banner .banner-content h4 {
-      color: #f2d188;
-      font-weight: bold;
-      text-align: center;
-      margin: 0 auto;
-      width: 50%; }
+      font-size: 3.3rem;
+      margin-bottom: 45px; }
     #home-page-container .banner .banner-content h5 {
       text-align: center;
       margin: 0 auto 10px; }
@@ -106,8 +108,5 @@ a, button {
 
 #page-footer {
   background-color: white; }
-
-.book-btn {
-  padding: 30px 40px; }
 
 /*# sourceMappingURL=index.css.map */

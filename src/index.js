@@ -48,7 +48,76 @@ class Header extends React.Component {
     }
 }
 
+function BookButton(props) {
+    
 
+    return (
+        <a href="#" class="book-button-link"><div class='button'>
+            <label for='button'>
+                <div class='button_inner q'>
+                    <i class='l ion-log-in fa fa-calendar-check-o' aria-hidden="true"></i>
+                    <span class='t'>B O O K </span><span class='t'> N O W</span>
+                    <span><i class='tick ion-checkmark-round'></i></span>
+
+                    <div class='b_l_quad'>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                        <div class='button_spots'></div>
+                    </div>
+                </div>
+            </label>
+        </div></a>
+    );
+}
 function Banner(props) {
     //<h4>Pellentesque pellentesque libero ac lectus posuere elementum. Nam facilisis aliquam quam vitae aliquam. Cras facilisis augue quis. </h4>
         return (
@@ -56,6 +125,9 @@ function Banner(props) {
                 <div class="banner-content">
                     <h5><FontAwesomeIcon icon={faMapMarkerAlt} color="#f0c975" size="1x"/>  Brampton, ON</h5>
                     <h1>{props.slogan}</h1>
+                    <BookButton/>
+
+                    
                 </div>
                 <img src="/assets/images/banner-background.jpg" class="banner-background img-fluid"></img>
             </div>
