@@ -6,25 +6,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 function NavbarItem(props) {
-    return (<a class="navbar-item" href={props.destination}>{props.name}</a>);
+    return (
+        <div class="navbar-item">
+            <a class="navbar-item" href={props.destination}>{props.name}</a>
+        </div>
+    );
 }
 class Header extends React.Component {
     componentDidMount() {
-        $('#page-header').hover(
-            function () {
-                $('#my-navbar').animate({opacity: 1}, {duration: 300, queue: false});
-                $('#my-navbar').animate({bottom: "0px"}, {duration: 300, queue: false});
-                
-            },
-            function () {
-                $('#my-navbar').animate({opacity: 0}, {duration: 300, queue: false});
-                $('#my-navbar').animate({bottom: "10px"}, {duration: 300, queue: false});
+        $(window).scroll( () => {
+            var top_of_element = $("#page-header").offset().top;
+            if (top_of_element > 90) {
+                $('#my-navbar').animate({opacity: 0}, {duration: 180, queue: false});
+                $('#my-navbar').animate({bottom: "10px"}, {duration: 180, queue: false});
+
+                $('#page-header').on({
+                        mouseenter: function () {
+                            $('#my-navbar').animate({opacity: 1}, {duration: 300, queue: false});
+                            $('#my-navbar').animate({bottom: "0px"}, {duration: 300, queue: false});    
+                        },
+                        mouseleave: function () {
+                            $('#my-navbar').animate({opacity: 0}, {duration: 300, queue: false});
+                            $('#my-navbar').animate({bottom: "10px"}, {duration: 300, queue: false});
+                        }
+                    }
+                );
+            } else {
+                $('#page-header').off();
+                $('#my-navbar').animate({bottom: "0px"}, {duration: 180, queue: false});
+                $('#my-navbar').animate({opacity: 1}, {duration: 180, queue: false});
             }
-        );
+        });        
     }
 
     render () {
@@ -48,8 +62,12 @@ class Header extends React.Component {
     }
 }
 
+function ButtonSpot(props) { return(<div class='button_spots'></div>);}
 function BookButton(props) {
-    
+    let spots = [];
+    for (var i = 0; i < 60; i++) { 
+        spots.push(<ButtonSpot key={i}/>); 
+    }
 
     return (
         <a href="#" class="book-button-link"><div class='button'>
@@ -60,71 +78,26 @@ function BookButton(props) {
                     <span><i class='tick ion-checkmark-round'></i></span>
 
                     <div class='b_l_quad'>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
-                        <div class='button_spots'></div>
+                        {spots}
                     </div>
                 </div>
             </label>
         </div></a>
     );
 }
-function Banner(props) {
-    //<h4>Pellentesque pellentesque libero ac lectus posuere elementum. Nam facilisis aliquam quam vitae aliquam. Cras facilisis augue quis. </h4>
+class Banner extends React.Component {
+    componentDidMount() {
+        $('.fade-in').each(function(i) {
+            $(this).animate({'opacity':'1'}, 1000);
+        });
+    }
+
+    render() {
         return (
             <div class="banner">
                 <div class="banner-content">
-                    <h5><FontAwesomeIcon icon={faMapMarkerAlt} color="#f0c975" size="1x"/>  Brampton, ON</h5>
-                    <h1>{props.slogan}</h1>
+                    <h5 class="fade-in"><i class='fa fa-map-marker map-icon 1x' aria-hidden="true"></i>Brampton, ON</h5>
+                    <h1 class="fade-in">{this.props.slogan}</h1>
                     <BookButton/>
 
                     
@@ -132,11 +105,14 @@ function Banner(props) {
                 <img src="/assets/images/banner-background.jpg" class="banner-background img-fluid"></img>
             </div>
         );
+    }    
 }
 
 function About(props) {
         return (
-            <div class="about-panel">This is why we we're reliable</div>
+            <div class="about-panel">
+                <h2 class='float-in'>Float-in animation example</h2>
+            </div>
         );
 }
 
@@ -181,16 +157,18 @@ function Footer(props) {
 
 //---------------------------------------
 class HomePage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {windowTop: 0};
-    }
+    componentDidMount() {
+        $(window).scroll( function(){
+            $('.float-in').each( function(i){
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-    componentDidUpdate = (prevProps, prevState) => {
-        if (prevState.windowTop !== window.screenTop ? window.screenTop : window.screenY) {
-            this.setState({windowTop: window.screenTop ? window.screenTop : window.screenY});
-            alert(this.state.windowTop);
-        }
+                if(bottom_of_window > bottom_of_element){
+                    $(this).animate({opacity: "1"}, {duration: 800, queue: false});
+                    $(this).animate({top: "0px"}, {duration: 350, queue: false});
+                }
+            });
+        }); 
     }
 
     render () {
