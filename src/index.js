@@ -108,7 +108,7 @@ class Banner extends React.Component {
     }    
 }
 
-function About(props) {
+function Reviews(props) {
         return (
             <div class="about-panel">
                 <h2 class='float-in'>Float-in animation example</h2>
@@ -128,27 +128,12 @@ class Services extends React.Component {
     }
 }
 
-
-function Reviews(props) {
-        return (
-            <div class="reviews-section">
-                <div>This is a review</div>
-            </div>
-        );
-}
-
-function SocialMedia(props) {
-    return (
-        <div class="social-media-section">
-            <div>Follow our Instagram</div>
-        </div>
-    );
-}
-
 function Footer(props) {
     return (
         <div id="page-footer">
-            <div>Footer</div>
+            <div class="social-media-wrapper">
+                <a href="https://www.instagram.com/lashmynxe/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
         </div>
     );
 }
@@ -176,10 +161,8 @@ class HomePage extends React.Component {
             <div id="home-page-container">  
                 <Header windowTop={0}/>
                 <Banner slogan={"The Boldest Lashes in Brampton"}/>
-                <About/>
-                <Services/>
                 <Reviews/>
-                <SocialMedia/>
+                <Services/>
                 <Footer/>
             </div>
         );
