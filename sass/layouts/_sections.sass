@@ -16,26 +16,52 @@
             h1
                 font-family: 'Dancing Script', cursive
                 text-align: center
-                font-size: 3.3rem
+                font-size: 4rem
                 margin-bottom: 48px
+                +breakpoint-mobile()
+                    font-size: 3rem
+                    margin-bottom: 20px
             .map-icon
                 color: darken($accent, 5%)
-                font-size: 1.25rem
+                font-size: 1.75rem
                 margin-right: 8px
 
             h5
+                font-size: 1.75rem
                 text-align: center
                 margin: 0 auto 10px
 
-    .about-panel
-        height: 300px
-        background-color: $background-alternate
-        h2
-            padding-top: 120px
-            font-weight: bold
+    .reviews-section
+        background-color: $light-background
+        padding: 50px 30px 50px
+        clear: both
+        .reviews
+            //background-color: lighten($light-background , 5)
+            border:  solid 8px white
+            width: max(60%, 450px)
+            padding: 0
             text-align: center
-            margin: 0 auto
+            font-family: Helvetica, sans-serif
+            font-weight: normal
+            h6
+                padding: 70px 0 25px
+                margin: 0 auto
+                font-size: 1.4rem
+            .review-icon
+                max-height: 60px
+            .quote
+                width: 100%
+                padding: 40px 30px 70px
+                font-family: $font-main
+                font-size: 2rem
+            // .carousel-indicators
+            //     li
+            //         border-color: #eddedd
+            //         background-color: transparent
+            //     .active
+            //         background-color: #eddedd
 
+        
 
     .services-section
         .left-header
@@ -48,13 +74,8 @@
             height: 700px
             width: 50%
             background-color: $secondary
-    .reviews-section
-        clear: both
-        height: 150px
-        background-color: $light-background
-    .social-media-section
-        height: 300px
-        background-color: $dark-background
+   
+  
 
 // Booking Page
 #booking-page-container

@@ -1,12 +1,13 @@
+// ****IMPORTS****
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import { render } from '@testing-library/react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import $ from 'jquery';
+
+// ****COMPONENTS****
+
+// Header -----------
 function NavbarItem(props) {
     return (
         <div class="navbar-item">
@@ -62,6 +63,8 @@ class Header extends React.Component {
     }
 }
 
+
+// Banner -----------
 function ButtonSpot(props) { return(<div class='button_spots'></div>);}
 function BookButton(props) {
     let spots = [];
@@ -108,15 +111,44 @@ class Banner extends React.Component {
     }    
 }
 
+
+// Reviews -----------
+function ClientQuote(props) {
+    return (
+        <>
+            <p>{props.review}</p>
+            <p>— {props.reviewer}</p>
+        </>
+    );
+}
 function Reviews(props) {
         return (
-            <div class="about-panel">
-                <h2 class='float-in'>Float-in animation example</h2>
+            <div class="reviews-section">
+                <div class="reviews container-fluid">           
+                    <h6 class="float-in">C U S T O M E R · R E V I E W S</h6>
+                    <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid"></img>
+
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="quote item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
+                            <div class="quote item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Danny"/></div>
+                            <div class="quote item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess. I highly recommend it." reviewer="Emily"/></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
 }
 
 
+// Services -----------
 class Services extends React.Component {
     render () {
         return (
@@ -128,6 +160,7 @@ class Services extends React.Component {
     }
 }
 
+// Footer -----------
 function Footer(props) {
     return (
         <div id="page-footer">
@@ -149,8 +182,8 @@ class HomePage extends React.Component {
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
 
                 if(bottom_of_window > bottom_of_element){
-                    $(this).animate({opacity: "1"}, {duration: 800, queue: false});
-                    $(this).animate({top: "0px"}, {duration: 350, queue: false});
+                    $(this).animate({opacity: "1"}, {duration: 350, queue: false});
+                    $(this).animate({top: "0px"}, {duration: 250, queue: false});
                 }
             });
         }); 
@@ -159,10 +192,9 @@ class HomePage extends React.Component {
     render () {
         return (
             <div id="home-page-container">  
-                <Header windowTop={0}/>
                 <Banner slogan={"The Boldest Lashes in Brampton"}/>
-                <Reviews/>
                 <Services/>
+                <Reviews/>
                 <Footer/>
             </div>
         );

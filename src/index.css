@@ -53,6 +53,7 @@ a, button {
     position: relative;
     justify-content: center; }
     #page-header #my-navbar .navbar-item {
+      font-size: 15px;
       display: block;
       padding: 7.5px 12px 7.5px;
       text-decoration: none;
@@ -63,7 +64,8 @@ a, button {
     height: 30px; }
 
 .navbar-clearing {
-  height: 140px; }
+  height: 137px;
+  background-color: transparent; }
 
 #home-page-container .banner {
   position: relative; }
@@ -81,23 +83,42 @@ a, button {
     #home-page-container .banner .banner-content h1 {
       font-family: "Dancing Script", cursive;
       text-align: center;
-      font-size: 3.3rem;
+      font-size: 4rem;
       margin-bottom: 48px; }
+      @media only screen and (max-width: 768px) {
+        #home-page-container .banner .banner-content h1 {
+          font-size: 3rem;
+          margin-bottom: 20px; } }
     #home-page-container .banner .banner-content .map-icon {
       color: #efc871;
-      font-size: 1.25rem;
+      font-size: 1.75rem;
       margin-right: 8px; }
     #home-page-container .banner .banner-content h5 {
+      font-size: 1.75rem;
       text-align: center;
       margin: 0 auto 10px; }
-#home-page-container .about-panel {
-  height: 300px;
-  background-color: #f7f7f7; }
-  #home-page-container .about-panel h2 {
-    padding-top: 120px;
-    font-weight: bold;
+#home-page-container .reviews-section {
+  background-color: #feeace;
+  padding: 50px 30px 50px;
+  clear: both; }
+  #home-page-container .reviews-section .reviews {
+    border: solid 8px white;
+    width: max(60%, 450px);
+    padding: 0;
     text-align: center;
-    margin: 0 auto; }
+    font-family: Helvetica, sans-serif;
+    font-weight: normal; }
+    #home-page-container .reviews-section .reviews h6 {
+      padding: 70px 0 25px;
+      margin: 0 auto;
+      font-size: 1.4rem; }
+    #home-page-container .reviews-section .reviews .review-icon {
+      max-height: 60px; }
+    #home-page-container .reviews-section .reviews .quote {
+      width: 100%;
+      padding: 40px 30px 70px;
+      font-family: "Cormorant Garamond", Times, serif;
+      font-size: 2rem; }
 #home-page-container .services-section .left-header {
   float: left;
   height: 700px;
@@ -108,13 +129,6 @@ a, button {
   height: 700px;
   width: 50%;
   background-color: #c6d7d2; }
-#home-page-container .reviews-section {
-  clear: both;
-  height: 150px;
-  background-color: #feeace; }
-#home-page-container .social-media-section {
-  height: 300px;
-  background-color: #7f6b68; }
 
 #page-footer {
   background-color: white;
