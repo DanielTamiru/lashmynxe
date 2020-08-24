@@ -5,6 +5,7 @@ import './index.css';
 
 import $ from 'jquery';
 
+
 // ****COMPONENTS****
 
 // Header -----------
@@ -91,7 +92,7 @@ function BookButton(props) {
 class Banner extends React.Component {
     componentDidMount() {
         $('.fade-in').each(function(i) {
-            $(this).animate({'opacity':'1'}, 1000);
+            $(this).animate({'opacity':'1'}, 1500);
         });
     }
 
@@ -102,13 +103,57 @@ class Banner extends React.Component {
                     <h5 class="fade-in"><i class='fa fa-map-marker map-icon 1x' aria-hidden="true"></i>Brampton, ON</h5>
                     <h1 class="fade-in">{this.props.slogan}</h1>
                     <BookButton/>
-
                     
                 </div>
-                <img src="/assets/images/banner-background.jpg" class="banner-background img-fluid"></img>
+                <img src="/assets/images/banner-background2.2.png" class="banner-background img-fluid"></img>
             </div>
         );
     }    
+}
+
+
+// Services -----------
+function ServiceCard(props) {
+    return( 
+        <div class="service card">
+            <img class="card-img-top" src={props.img_location} alt="Card image cap"></img>
+            <div class="card-body">
+                <header class="name-and-price">
+                    <div>{props.name}</div>
+                    <div class="price">{props.price}</div>
+                </header>
+                <p class="card-text">{props.description}</p>
+                <a href="#"><button class="service-button"><span>Book </span></button></a>
+            </div>
+        </div>
+    );
+}
+class Services extends React.Component {
+    render () {
+        return (
+            <div class="services-section">
+                <div class="left-header-wrapper">
+                    <header class="services-header">
+                        <h6>Mega·Quality</h6>
+                        <h2>OUR SERVICES</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                    </header>
+                </div>
+                <div class="service-list">
+                    <h3>Book·Buy·Beautify</h3>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-classics.png" name="Classics" price="50" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                    <hr></hr>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-hybrid.png" name="Hybrids" price="65" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                    <hr></hr>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-lift.png" name="Lash Lift" price="40" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                    <hr></hr>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-volumes.png" name="Volumes" price="75" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                    <hr></hr>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-mega.jpg" name="Mega Volumes" price="85" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                </div>
+            </div>
+        );
+    }
 }
 
 
@@ -124,41 +169,31 @@ function ClientQuote(props) {
 function Reviews(props) {
         return (
             <div class="reviews-section">
-                <div class="reviews container-fluid">           
-                    <h6 class="float-in">C U S T O M E R · R E V I E W S</h6>
-                    <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid"></img>
+                <div class="reviews-wrapper">
+                    <div class="reviews container-fluid">           
+                        <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid" data-interval="3000"></img>
 
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
 
-                        <div class="carousel-inner">
-                            <div class="quote item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
-                            <div class="quote item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Danny"/></div>
-                            <div class="quote item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess. I highly recommend it." reviewer="Emily"/></div>
+                            <div class="carousel-inner">
+                                <div class="quote carousel-item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
+                                <div class="quote carousel-item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Kiara"/></div>
+                                <div class="quote carousel-item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess." reviewer="Emily"/></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <img src="/assets/images/reviews-background6.png" class="reviews-background"></img>
             </div>
         );
 }
 
-
-// Services -----------
-class Services extends React.Component {
-    render () {
-        return (
-            <div class="services-section">
-                <div class="left-header"></div>
-                <div class="service-list"></div>
-            </div>
-        );
-    }
-}
 
 // Footer -----------
 function Footer(props) {
@@ -178,20 +213,27 @@ class HomePage extends React.Component {
     componentDidMount() {
         $(window).scroll( function(){
             $('.float-in').each( function(i){
-                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var top_of_element = $(this).offset().top;
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-                if(bottom_of_window > bottom_of_element){
-                    $(this).animate({opacity: "1"}, {duration: 350, queue: false});
+                if(bottom_of_window > top_of_element){
+                    $(this).animate({opacity: "1"}, {duration: 100, queue: false});
                     $(this).animate({top: "0px"}, {duration: 250, queue: false});
                 }
             });
         }); 
+
+        $('.your-sticky-element').parents().filter(function() {
+            console.log($(this));
+            console.log($(this).css('overflow'));
+            return $(this).css('overflow') === 'hidden';
+        });
     }
 
     render () {
         return (
             <div id="home-page-container">  
+                <Header/>
                 <Banner slogan={"The Boldest Lashes in Brampton"}/>
                 <Services/>
                 <Reviews/>
