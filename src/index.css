@@ -120,7 +120,7 @@ a, button {
   #home-page-container .services-section .left-header-wrapper {
     width: 47.5%;
     background-color: #f8edde;
-    background: url("/assets/images/services-background.jpeg");
+    background: url("/assets/images/services-margin-background.jpg");
     background-repeat: no-repeat;
     background-size: auto; }
     @media only screen and (max-width: 768px) {
@@ -141,7 +141,8 @@ a, button {
         letter-spacing: 0.5rem;
         text-transform: uppercase;
         margin: 0 auto;
-        font-size: 0.8rem; }
+        font-size: 0.8rem;
+        color: #eab643; }
       #home-page-container .services-section .left-header-wrapper .services-header h2 {
         font-family: "Bentham", serif;
         letter-spacing: 0.6rem;
@@ -188,7 +189,8 @@ a, button {
         text-transform: uppercase;
         padding-bottom: 20px; }
         #home-page-container .services-section .service-list .service .name-and-price .price {
-          letter-spacing: 0.125rem; }
+          letter-spacing: 0.125rem;
+          color: #eab643; }
       #home-page-container .services-section .service-list .service p {
         font-size: 1.1rem; }
       #home-page-container .services-section .service-list .service button {

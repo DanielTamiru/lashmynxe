@@ -145,11 +145,11 @@ class Services extends React.Component {
                     <hr></hr>
                     <ServiceCard img_location="/assets/images/lashpics/lashpic-hybrid.png" name="Hybrids" price="65" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
                     <hr></hr>
-                    <ServiceCard img_location="/assets/images/lashpics/lashpic-lift.png" name="Lash Lift" price="40" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
-                    <hr></hr>
                     <ServiceCard img_location="/assets/images/lashpics/lashpic-volumes.png" name="Volumes" price="75" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
                     <hr></hr>
                     <ServiceCard img_location="/assets/images/lashpics/lashpic-mega.jpg" name="Mega Volumes" price="85" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
+                    <hr></hr>
+                    <ServiceCard img_location="/assets/images/lashpics/lashpic-lift.png" name="Lash Lift" price="40" description="Some quick example text to build on the card title and make up the bulk of the card's content. This is more description baby."/>
                 </div>
             </div>
         );
@@ -171,7 +171,7 @@ function Reviews(props) {
             <div class="reviews-section">
                 <div class="reviews-wrapper">
                     <div class="reviews container-fluid">           
-                        <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid" data-interval="3000"></img>
+                        <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid" data-interval="1200"></img>
 
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -189,7 +189,7 @@ function Reviews(props) {
                         </div>
                     </div>
                 </div>
-                <img src="/assets/images/reviews-background6.png" class="reviews-background"></img>
+                <img src="/assets/images/reviews-background8.jpg" class="reviews-background"></img>
             </div>
         );
 }
