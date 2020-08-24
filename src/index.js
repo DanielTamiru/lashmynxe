@@ -129,6 +129,19 @@ function ServiceCard(props) {
     );
 }
 class Services extends React.Component {
+    componentDidMount() {
+        $(window).scroll( function(){
+            $('.slide-in').each( function(i){
+                var top_of_element = $(this).offset().top;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                if(bottom_of_window > top_of_element - 20){
+                    $(this).animate({left: '-60px'}, {duration: 100, queue: false});
+                }
+            });
+        }); 
+    }
+
     render () {
         return (
             <div class="services-section">
@@ -160,36 +173,33 @@ class Services extends React.Component {
 // Reviews -----------
 function ClientQuote(props) {
     return (
-        <>
+        <div class='float-in'>
             <p>{props.review}</p>
             <p>— {props.reviewer}</p>
-        </>
+        </div>
     );
 }
 function Reviews(props) {
         return (
             <div class="reviews-section">
-                <div class="reviews-wrapper">
-                    <div class="reviews container-fluid">           
-                        <img src="/assets/images/quotation-marks.png" class="review-icon img-fluid" data-interval="1200"></img>
+                <div class="reviews container-fluid">           
+                    <img src="/assets/images/quotation-marks-yellow.png" class="review-icon img-fluid float-in" data-interval="1200"></img>
 
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
 
-                            <div class="carousel-inner">
-                                <div class="quote carousel-item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
-                                <div class="quote carousel-item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Kiara"/></div>
-                                <div class="quote carousel-item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess." reviewer="Emily"/></div>
-                            </div>
+                        <div class="carousel-inner">
+                            <div class="quote carousel-item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
+                            <div class="quote carousel-item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Kiara"/></div>
+                            <div class="quote carousel-item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess." reviewer="Emily"/></div>
                         </div>
                     </div>
                 </div>
-                <img src="/assets/images/reviews-background8.jpg" class="reviews-background"></img>
             </div>
         );
 }
@@ -217,17 +227,11 @@ class HomePage extends React.Component {
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
 
                 if(bottom_of_window > top_of_element){
-                    $(this).animate({opacity: "1"}, {duration: 100, queue: false});
-                    $(this).animate({top: "0px"}, {duration: 250, queue: false});
+                    $(this).animate({opacity: "1"}, {duration: 375, queue: false});
+                    $(this).animate({top: "0px"}, {duration: 300, queue: false});
                 }
             });
         }); 
-
-        $('.your-sticky-element').parents().filter(function() {
-            console.log($(this));
-            console.log($(this).css('overflow'));
-            return $(this).css('overflow') === 'hidden';
-        });
     }
 
     render () {

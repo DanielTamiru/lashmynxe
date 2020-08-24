@@ -21,7 +21,7 @@
                 margin-bottom: 48px
                 
                 +breakpoint-mobile()
-                    font-size: 1.5rem
+                    font-size: 1.4rem
                     margin-bottom: 12px
             .map-icon
                 color: darken($accent, 5%)
@@ -37,7 +37,7 @@
     .services-section
         display: flex
         justify-content: space-between
-        margin: 80px 0 110px
+        margin: 80px 0 100px
         +breakpoint-mobile()
             margin: 80px 0 50px
         .left-header-wrapper
@@ -57,7 +57,8 @@
                 padding: 60px
                 background-color: white
                 margin: 40px 5% 40px 25%
-                +breakpoint-mobile()
+                
+                +breakpoint-tablet()
                     margin: 40px 10% 0 10%
                 
                 h6
@@ -70,7 +71,8 @@
                     margin: 0 auto
                     padding: 10px 0 15px
                 p
-                    font-size: 1.25rem
+                    font-size: 1.1rem
+            
                 
         .service-list
             width: 47.5%
@@ -96,8 +98,14 @@
 
             .service
                 width: 67.5%
-                +breakpoint-mobile()
+                +breakpoint-tablet()
                     width: 100%
+                transition: all .4s ease-in-out
+                &:hover
+                    -webkit-transform: scale(0.95)
+                    -ms-transform: scale(0.95)
+                    transform: scale(0.95)
+
                 img
                     height: 100%
                     width: 100%
@@ -113,6 +121,7 @@
                     font-size: 1.1rem
                 button
                     +subtitle-style()
+                
 
                     
 
@@ -125,45 +134,41 @@
 
 
     .reviews-section
-        position: relative
-        overflow: hidden
-        .reviews-wrapper
-            position: absolute
-            height: 100%
-            width: 100%
-            .reviews
-                width: max(60%, 450px)
-                //background-color: rgba(255, 255, 255, 0.95)
-                padding: 0
-                text-align: center
-                padding: 35px
-                font-weight: normal
-                margin-top: 3%
+        background: url('/assets/images/reviews-background10.png')
+        background-repeat: no-repeat
+        background-size: auto 
+        .reviews
+            width: max(60%, 450px) 
+            padding: 0
+            text-align: center
+            padding: 125px 35px 70px
+            font-weight: normal
+            margin-top: 3%
+            +breakpoint-mobile()
+                margin-top: 10%
+            .review-icon
+                max-height: 25px
+            .quote
+                width: 100%
+                padding: 25px 0 30px
+                height: 175px
+                font-family: $font-main
+                font-size: 1.65rem
+                font-weight: 400
+            .carousel-indicators
+                bottom: -25px
+                +breakpoint-tablet()
+                    bottom: -30px
                 +breakpoint-mobile()
-                    margin-top: 10%
-                .review-icon
-                    max-height: 25px
-                .quote
-                    width: 100%
-                    padding: 25px 0 30px
-                    height: 175px
-                    font-family: $font-main
-                    font-size: 1.7rem
-                    font-weight: 400
-                .carousel-indicators
-                    bottom: -15px
-                    +breakpoint-tablet()
-                        bottom: -20px
-                    +breakpoint-mobile()
-                        bottom: -25px
-                    li 
-                        width: 10px
-                        height: 10px
-                        border-radius: 50%
-                        border: solid 2px black
-                        background-color: transparent
-                    .active
-                        background-color: black
+                    bottom: -35px
+                li 
+                    width: 10px
+                    height: 10px
+                    border-radius: 50%
+                    border: solid 2px black
+                    background-color: transparent
+                .active
+                    background-color: black
         .reviews-background
             pointer-events: none
         

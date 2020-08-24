@@ -97,7 +97,7 @@ a, button {
       margin-bottom: 48px; }
       @media only screen and (max-width: 768px) {
         #home-page-container .banner .banner-content h1 {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           margin-bottom: 12px; } }
     #home-page-container .banner .banner-content .map-icon {
       color: #efc871;
@@ -113,7 +113,7 @@ a, button {
 #home-page-container .services-section {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0 110px; }
+  margin: 80px 0 100px; }
   @media only screen and (max-width: 768px) {
     #home-page-container .services-section {
       margin: 80px 0 50px; } }
@@ -133,7 +133,7 @@ a, button {
       padding: 60px;
       background-color: white;
       margin: 40px 5% 40px 25%; }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 992px) {
         #home-page-container .services-section .left-header-wrapper .services-header {
           margin: 40px 10% 0 10%; } }
       #home-page-container .services-section .left-header-wrapper .services-header h6 {
@@ -150,7 +150,7 @@ a, button {
         margin: 0 auto;
         padding: 10px 0 15px; }
       #home-page-container .services-section .left-header-wrapper .services-header p {
-        font-size: 1.25rem; }
+        font-size: 1.1rem; }
   #home-page-container .services-section .service-list {
     width: 47.5%;
     padding: 0 40px 0; }
@@ -174,10 +174,15 @@ a, button {
       display: block;
       margin-left: 0; }
     #home-page-container .services-section .service-list .service {
-      width: 67.5%; }
-      @media only screen and (max-width: 768px) {
+      width: 67.5%;
+      transition: all 0.4s ease-in-out; }
+      @media only screen and (max-width: 992px) {
         #home-page-container .services-section .service-list .service {
           width: 100%; } }
+      #home-page-container .services-section .service-list .service:hover {
+        -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95); }
       #home-page-container .services-section .service-list .service img {
         height: 100%;
         width: 100%; }
@@ -203,47 +208,44 @@ a, button {
     #home-page-container .services-section {
       display: block; } }
 #home-page-container .reviews-section {
-  position: relative;
-  overflow: hidden; }
-  #home-page-container .reviews-section .reviews-wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%; }
-    #home-page-container .reviews-section .reviews-wrapper .reviews {
-      width: max(60%, 450px);
-      padding: 0;
-      text-align: center;
-      padding: 35px;
-      font-weight: normal;
-      margin-top: 3%; }
+  background: url("/assets/images/reviews-background10.png");
+  background-repeat: no-repeat;
+  background-size: auto; }
+  #home-page-container .reviews-section .reviews {
+    width: max(60%, 450px);
+    padding: 0;
+    text-align: center;
+    padding: 125px 35px 70px;
+    font-weight: normal;
+    margin-top: 3%; }
+    @media only screen and (max-width: 768px) {
+      #home-page-container .reviews-section .reviews {
+        margin-top: 10%; } }
+    #home-page-container .reviews-section .reviews .review-icon {
+      max-height: 25px; }
+    #home-page-container .reviews-section .reviews .quote {
+      width: 100%;
+      padding: 25px 0 30px;
+      height: 175px;
+      font-family: "Cormorant Garamond", Times, serif;
+      font-size: 1.65rem;
+      font-weight: 400; }
+    #home-page-container .reviews-section .reviews .carousel-indicators {
+      bottom: -25px; }
+      @media only screen and (max-width: 992px) {
+        #home-page-container .reviews-section .reviews .carousel-indicators {
+          bottom: -30px; } }
       @media only screen and (max-width: 768px) {
-        #home-page-container .reviews-section .reviews-wrapper .reviews {
-          margin-top: 10%; } }
-      #home-page-container .reviews-section .reviews-wrapper .reviews .review-icon {
-        max-height: 25px; }
-      #home-page-container .reviews-section .reviews-wrapper .reviews .quote {
-        width: 100%;
-        padding: 25px 0 30px;
-        height: 175px;
-        font-family: "Cormorant Garamond", Times, serif;
-        font-size: 1.7rem;
-        font-weight: 400; }
-      #home-page-container .reviews-section .reviews-wrapper .reviews .carousel-indicators {
-        bottom: -15px; }
-        @media only screen and (max-width: 992px) {
-          #home-page-container .reviews-section .reviews-wrapper .reviews .carousel-indicators {
-            bottom: -20px; } }
-        @media only screen and (max-width: 768px) {
-          #home-page-container .reviews-section .reviews-wrapper .reviews .carousel-indicators {
-            bottom: -25px; } }
-        #home-page-container .reviews-section .reviews-wrapper .reviews .carousel-indicators li {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          border: solid 2px black;
-          background-color: transparent; }
-        #home-page-container .reviews-section .reviews-wrapper .reviews .carousel-indicators .active {
-          background-color: black; }
+        #home-page-container .reviews-section .reviews .carousel-indicators {
+          bottom: -35px; } }
+      #home-page-container .reviews-section .reviews .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: solid 2px black;
+        background-color: transparent; }
+      #home-page-container .reviews-section .reviews .carousel-indicators .active {
+        background-color: black; }
   #home-page-container .reviews-section .reviews-background {
     pointer-events: none; }
 
