@@ -20,7 +20,7 @@ class Header extends React.Component {
     componentDidMount() {
         $(window).scroll( () => {
             var top_of_element = $("#page-header").offset().top;
-            if (top_of_element > 90) {
+            if (top_of_element > 90 && $(window).width() > 992) {
                 $('#my-navbar').animate({opacity: 0}, {duration: 180, queue: false});
                 $('#my-navbar').animate({bottom: "10px"}, {duration: 180, queue: false});
 
@@ -48,7 +48,7 @@ class Header extends React.Component {
             <>
                 <header id="page-header">
                     <div class="logo-wrapper">
-                        <img src="/lashmynxe-logo.png" alt="lashmynxe-icon-black.png" class="logo img-fluid"></img>
+                        <img src="/assets/icons and logos/lashmynxe-logo.png" alt="L A S H M Y N X E" class="logo img-fluid"></img>
                     </div>
 
                     <nav id="my-navbar">
@@ -75,7 +75,7 @@ function BookButton(props) {
 
     return (
         <a href="#" class="book-button-link"><div class='button'>
-            <label for='button'>
+            <label>
                 <div class='button_inner q'>
                     <i class='l ion-log-in fa fa-calendar-check-o' aria-hidden="true"></i>
                     <span class='t'>B O O K </span><span class='t'> N O W</span>
@@ -105,7 +105,7 @@ class Banner extends React.Component {
                     <BookButton/>
                     
                 </div>
-                <img src="/assets/images/banner-background2.2.png" class="banner-background img-fluid"></img>
+                <img src="/assets/images/banner-background.png" alt="banner background" class="banner-background img-fluid"></img>
             </div>
         );
     }    
@@ -116,7 +116,7 @@ class Banner extends React.Component {
 function ServiceCard(props) {
     return( 
         <div class="service card">
-            <img class="card-img-top" src={props.img_location} alt="Card image cap"></img>
+            <img class="card-img-top" src={props.img_location} alt="Lashes"></img>
             <div class="card-body">
                 <header class="name-and-price">
                     <div>{props.name}</div>
@@ -183,7 +183,7 @@ function Reviews(props) {
         return (
             <div class="reviews-section">
                 <div class="reviews container-fluid">           
-                    <img src="/assets/images/quotation-marks-yellow.png" class="review-icon img-fluid float-in" data-interval="1200"></img>
+                    <img src="/assets/images/quotation-marks-yellow.png" alt="''" class="review-icon img-fluid float-in" data-interval="1200"></img>
 
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -196,7 +196,7 @@ function Reviews(props) {
                         <div class="carousel-inner">
                             <div class="quote carousel-item active"><ClientQuote review="The appointment was right on time. Best eyelash tint I've ever had!" reviewer="Dazel"/></div>
                             <div class="quote carousel-item"><ClientQuote review="This is a good Lash Salon! Trust me. I'm the lash god" reviewer="Kiara"/></div>
-                            <div class="quote carousel-item"><ClientQuote review="This is place fucking rocks. Mary turned me into a goddess." reviewer="Emily"/></div>
+                            <div class="quote carousel-item"><ClientQuote review="This is place freaking rocks. Mary turned me into a goddess." reviewer="Emily"/></div>
                         </div>
                     </div>
                 </div>
@@ -207,10 +207,11 @@ function Reviews(props) {
 
 // Footer -----------
 function Footer(props) {
+    var nothing = ""
     return (
         <div id="page-footer">
             <div class="social-media-wrapper">
-                <a href="https://www.instagram.com/lashmynxe/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/lashmynxe/">{nothing}<i class="fa fa-instagram" aria-hidden="true"></i></a>
             </div>
         </div>
     );

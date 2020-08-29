@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&display=swap+family=Dancing+Script:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bentham&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&display=swap+family=Bentham&display=swap");
 @import url(/assets/css/book-button-style.css);
 html, body {
   margin: 0;
@@ -98,7 +97,7 @@ a, button {
       @media only screen and (max-width: 768px) {
         #home-page-container .banner .banner-content h1 {
           font-size: 1.4rem;
-          margin-bottom: 12px; } }
+          margin-bottom: 35px; } }
     #home-page-container .banner .banner-content .map-icon {
       color: #efc871;
       font-size: 1.25rem;
@@ -120,7 +119,7 @@ a, button {
   #home-page-container .services-section .left-header-wrapper {
     width: 47.5%;
     background-color: #f8edde;
-    background: url("/assets/images/services-margin-background.jpg");
+    background: url("/assets/images/services-background.jpg");
     background-repeat: no-repeat;
     background-size: auto; }
     @media only screen and (max-width: 768px) {
@@ -208,7 +207,7 @@ a, button {
     #home-page-container .services-section {
       display: block; } }
 #home-page-container .reviews-section {
-  background: url("/assets/images/reviews-background10.png");
+  background: url("/assets/images/reviews-background.png");
   background-repeat: no-repeat;
   background-size: auto; }
   #home-page-container .reviews-section .reviews {
