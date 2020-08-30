@@ -7,8 +7,6 @@
             max-height: 830px
             pointer-events: none
         .banner-content
-            .fade-in
-                opacity: 0
             position: absolute
             top: 25%
             left: 50%
@@ -65,6 +63,7 @@
                 
                 h6
                     +subtitle-style()
+                    text-align: left
                     margin: 0 auto
                     font-size: 0.8rem
                     color: darken($accent, 15%)
@@ -183,3 +182,76 @@
 
 // Contact Page
 #contact-page-container
+    text-align: center
+    height: 100%
+    background-image: url("/assets/images/contact-background.jpg")
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    .banner
+        height: 345px
+        postion: relative
+        .banner-content
+            position: absolute
+            top: 33%
+            left: 50%
+            width: 100%
+            -webkit-transform: translateX(-50%)
+            transform: translateX(-50%)
+            h1
+                +title-style()
+                font-size: 3.75rem
+                text-align: center
+                +breakpoint-mobile()
+                    font-size: 3.2rem
+            h5
+                +subtitle-style()
+                color: $accent
+                font-size: 1rem
+                +breakpoint-mobile()
+                    font-size: 0.75rem
+      
+    .contact-info
+        width: 100%
+        padding: 90px 10% 125px
+        display: grid
+        grid-template-columns: 3fr 1fr 3fr 1fr 3fr
+        .info-item
+            padding: 30px
+            color: white
+            background-color: black
+            transition: all .2s ease-in-out
+            &:hover
+                transform: scale(1.025)
+
+            i
+                font-size: 3rem
+                margin: 12.5px 0 15px
+                color: $accent
+            h6
+                font-size: 1.5rem
+                padding-bottom: 7.5px
+            p
+                font-size: 1.15rem
+            
+        .info-item-gap
+            height: 100%
+            position: relative
+            +breakpoint-tablet()
+                display: none
+            .item-bridge
+                position: absolute
+                background-color: black
+                height: 20px
+                width: 100%
+                top: 50%
+                -ms-transform: translateY(-50%)
+                -webkit-transform: translateY(-50%)
+                transform: translateY(-50%)
+
+        +breakpoint-tablet()
+            grid-template-columns: 1fr
+            gap: 5%
+            padding-top: 0
+            

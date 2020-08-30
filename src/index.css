@@ -33,11 +33,8 @@ a, button {
   position: relative;
   top: 12px; }
 
-.subtitile-style {
-  font-family: Helvetica, sans-serif;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  text-align: center; }
+.fade-in {
+  opacity: 0; }
 
 #page-header {
   width: 100%;
@@ -85,8 +82,6 @@ a, button {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center; }
-    #home-page-container .banner .banner-content .fade-in {
-      opacity: 0; }
     #home-page-container .banner .banner-content h1 {
       font-family: "Bentham", serif;
       letter-spacing: 0.6rem;
@@ -107,7 +102,8 @@ a, button {
       margin: 0 auto 10px;
       font-family: Helvetica, sans-serif;
       letter-spacing: 0.5rem;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-align: center; }
 #home-page-container .services-section {
   display: flex;
   justify-content: space-between;
@@ -138,6 +134,8 @@ a, button {
         font-family: Helvetica, sans-serif;
         letter-spacing: 0.5rem;
         text-transform: uppercase;
+        text-align: center;
+        text-align: left;
         margin: 0 auto;
         font-size: 0.8rem;
         color: #eab643; }
@@ -159,6 +157,7 @@ a, button {
       font-family: Helvetica, sans-serif;
       letter-spacing: 0.5rem;
       text-transform: uppercase;
+      text-align: center;
       font-size: 0.75rem;
       text-align: center;
       margin-bottom: 30px;
@@ -190,6 +189,7 @@ a, button {
         font-family: Helvetica, sans-serif;
         letter-spacing: 0.5rem;
         text-transform: uppercase;
+        text-align: center;
         padding-bottom: 20px; }
         #home-page-container .services-section .service-list .service .name-and-price .price {
           letter-spacing: 0.125rem;
@@ -199,7 +199,8 @@ a, button {
       #home-page-container .services-section .service-list .service button {
         font-family: Helvetica, sans-serif;
         letter-spacing: 0.5rem;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        text-align: center; }
     #home-page-container .services-section .service-list .service + .service {
       margin-top: 75px; }
   @media only screen and (max-width: 768px) {
@@ -246,6 +247,85 @@ a, button {
         background-color: black; }
   #home-page-container .reviews-section .reviews-background {
     pointer-events: none; }
+
+#contact-page-container {
+  text-align: center;
+  height: 100%;
+  background-image: url("/assets/images/contact-background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #contact-page-container .banner {
+    height: 345px;
+    postion: relative; }
+    #contact-page-container .banner .banner-content {
+      position: absolute;
+      top: 33%;
+      left: 50%;
+      width: 100%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      #contact-page-container .banner .banner-content h1 {
+        font-family: "Bentham", serif;
+        letter-spacing: 0.6rem;
+        text-transform: uppercase;
+        font-size: 3.75rem;
+        text-align: center; }
+        @media only screen and (max-width: 768px) {
+          #contact-page-container .banner .banner-content h1 {
+            font-size: 3.2rem; } }
+      #contact-page-container .banner .banner-content h5 {
+        font-family: Helvetica, sans-serif;
+        letter-spacing: 0.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #f2d188;
+        font-size: 1rem; }
+        @media only screen and (max-width: 768px) {
+          #contact-page-container .banner .banner-content h5 {
+            font-size: 0.75rem; } }
+  #contact-page-container .contact-info {
+    width: 100%;
+    padding: 90px 10% 125px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 3fr; }
+    #contact-page-container .contact-info .info-item {
+      padding: 30px;
+      color: white;
+      background-color: black;
+      transition: all 0.2s ease-in-out; }
+      #contact-page-container .contact-info .info-item:hover {
+        transform: scale(1.025); }
+      #contact-page-container .contact-info .info-item i {
+        font-size: 3rem;
+        margin: 12.5px 0 15px;
+        color: #f2d188; }
+      #contact-page-container .contact-info .info-item h6 {
+        font-size: 1.5rem;
+        padding-bottom: 7.5px; }
+      #contact-page-container .contact-info .info-item p {
+        font-size: 1.15rem; }
+    #contact-page-container .contact-info .info-item-gap {
+      height: 100%;
+      position: relative; }
+      @media only screen and (max-width: 992px) {
+        #contact-page-container .contact-info .info-item-gap {
+          display: none; } }
+      #contact-page-container .contact-info .info-item-gap .item-bridge {
+        position: absolute;
+        background-color: black;
+        height: 20px;
+        width: 100%;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    @media only screen and (max-width: 992px) {
+      #contact-page-container .contact-info {
+        grid-template-columns: 1fr;
+        gap: 5%;
+        padding-top: 0; } }
 
 #page-footer {
   background-color: white;
