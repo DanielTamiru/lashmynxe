@@ -4,7 +4,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; }
+  height: 100%;
+  font-family: "Cormorant Garamond", Times, serif; }
 
 body {
   color: black; }
@@ -16,20 +17,16 @@ a, button {
     outline: none; }
 
 #home-page-container {
-  font-family: "Cormorant Garamond", Times, serif;
   padding: 0;
   margin: 0 auto; }
 
-#booking-page-container {
+#book-page-container {
   padding: 0;
   margin: 0 auto; }
 
 #contact-page-container {
   padding: 0;
   margin: 0 auto; }
-
-.fade-in {
-  opacity: 0; }
 
 .float-in {
   opacity: 0;
@@ -61,12 +58,12 @@ a, button {
     justify-content: center; }
     #page-header #my-navbar .navbar-item {
       font-size: 15px;
-      display: block;
-      padding: 7.5px 12px 7.5px;
-      text-decoration: none;
-      color: #747474; }
-      #page-header #my-navbar .navbar-item:hover {
-        color: black; }
+      padding: 15px 24px 15px; }
+      #page-header #my-navbar .navbar-item .navbar-item-name {
+        text-decoration: none;
+        color: #747474; }
+        #page-header #my-navbar .navbar-item .navbar-item-name:hover {
+          color: black; }
   #page-header #invisible-navbar-toggle {
     height: 30px; }
 
@@ -88,6 +85,8 @@ a, button {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center; }
+    #home-page-container .banner .banner-content .fade-in {
+      opacity: 0; }
     #home-page-container .banner .banner-content h1 {
       font-family: "Bentham", serif;
       letter-spacing: 0.6rem;
