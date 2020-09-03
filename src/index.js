@@ -8,6 +8,13 @@ import Main from "./main"
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
+let default_url = "https://lashmynxe.setmore.com"
+let classics_url = "https://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/scc8dfb2441b051321b4bf350afd53ad20e8ad430";
+let hybrids_url = "https://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa";
+let volumes_url = "https://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa";
+let megas_url = "https://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa";
+let lifts_url = "https://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa";
+
 // Header -----------
 function NavbarItem(props) {
     return (
