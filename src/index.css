@@ -265,8 +265,9 @@ hr.fancy:after {
           color: #eab643; }
           #home-page-container .services-section .service-list .service .name-and-price .price .refill-label {
             text-transform: none;
-            font-size: 0.6rem;
-            margin-left: 4px; }
+            font-size: 0.75rem;
+            margin-left: 4px;
+            letter-spacing: 0rem; }
       #home-page-container .services-section .service-list .service p {
         font-size: 1.1rem; }
       #home-page-container .services-section .service-list .service button {
