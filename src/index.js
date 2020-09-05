@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function NavbarItem(props) {
     return (
         <div class="navbar-item">
-            <Link to={props.destination} style={{ textDecoration: 'none' }}><span class="navbar-item-name">{props.name}</span></Link>
+            <Link to={props.destination} onClick={(e) => document.body.scrollIntoView()} style={{ textDecoration: 'none' }}><span class="navbar-item-name">{props.name}</span></Link>
         </div>
     );
 }
