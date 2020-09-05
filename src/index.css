@@ -387,6 +387,15 @@ hr.fancy:after {
         justify-content: space-between;
         font-size: 1.5rem;
         padding: 5px 15px; }
+        @media only screen and (max-width: 992px) {
+          #book-page-container .price-list-wrapper .mini-price-list .mini-service-card .pricing .price-box {
+            margin: 7.5px;
+            border: 2px solid #f2d188;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            border-radius: 5px; } }
         #book-page-container .price-list-wrapper .mini-price-list .mini-service-card .pricing .price-box:hover {
           background-color: #fcf8f3;
           cursor: grab; }
@@ -439,17 +448,17 @@ hr.fancy:after {
       margin: 0 auto;
       width: max(70%, 350px); }
 #book-page-container #widget-wrapper {
-  height: 675px;
+  height: 710px;
   overflow: hidden; }
   @media only screen and (max-width: 1280px) {
     #book-page-container #widget-wrapper {
-      height: 650px; } }
+      height: 737.5px; } }
   @media only screen and (max-width: 828px) {
     #book-page-container #widget-wrapper {
-      height: 450px; } }
+      height: 625px; } }
   @media only screen and (max-width: 540px) {
     #book-page-container #widget-wrapper {
-      height: 425px; } }
+      height: 620px; } }
   #book-page-container #widget-wrapper iframe {
     width: 100%;
     height: 1000px;
@@ -464,7 +473,7 @@ hr.fancy:after {
         top: -70px; } }
     @media only screen and (max-width: 540px) {
       #book-page-container #widget-wrapper iframe {
-        top: -115px; } }
+        top: -47.5px; } }
 
 #contact-page-container {
   text-align: center;

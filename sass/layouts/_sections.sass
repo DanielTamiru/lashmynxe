@@ -240,6 +240,17 @@
                         justify-content: space-between
                         font-size: 1.5rem
                         padding: 5px 15px 
+                        +breakpoint-tablet()
+                            margin: 7.5px
+                            border: 2px solid $accent
+                            -webkit-border-radius: 5px
+                            border-radius: 5px
+                            -moz-border-radius: 5px
+                            -khtml-border-radius: 5px
+                            border-radius: 5px
+                            // -moz-box-shadow:    0px 1px 1px 1px #ccc
+                            // -webkit-box-shadow: 0px 1px 1px 1px #ccc
+                            // box-shadow:         0px 1px 1px 1px #ccc
                         &:hover
                             background-color: lighten($light-background, 5%)
                             cursor: grab
@@ -292,14 +303,14 @@
                 width: max(70%, 350px)
         
     #widget-wrapper
-        height: 675px
+        height: 710px
         overflow: hidden
         @media only screen and (max-width: 1280px)
-            height: 650px
+            height: 737.5px
         @media only screen and (max-width: 828px)
-            height: 450px
+            height: 625px
         @media only screen and (max-width: 540px)
-            height: 425px
+            height: 620px
         iframe
             width: 100%
             height: 1000px
@@ -311,7 +322,7 @@
             @media only screen and (max-width: 828px)
                 top: -70px
             @media only screen and (max-width: 540px)
-                top: -115px
+                top: -47.5px
 
 
 // Contact Page
