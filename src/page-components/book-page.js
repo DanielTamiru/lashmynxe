@@ -40,7 +40,7 @@ class SetMoreWidget extends React.Component {
     render() {
         return(
         <section id="widget-wrapper">
-            <iframe title="SetMore" src={this.props.currentServiceUrl}></iframe>
+            <iframe scrolling="no" title="SetMore" src={this.props.currentServiceUrl}></iframe>
         </section>);
     }
 }

@@ -16,30 +16,33 @@
             text-align: center
             h1
                 +title-style()
-                
                 font-size: 2.75rem
                 margin-bottom: 48px
                 
                 +breakpoint-mobile()
-                    font-size: 1.5rem
-                    margin-bottom: 35px
+                    font-size: 1.15rem
+                    margin-bottom: 22.5px
             .map-icon
                 color: darken($accent, 5%)
                 font-size: 1.25rem
                 margin-right: 8px
+                +breakpoint-mobile()
+                    font-size: 0.9rem
 
             h5
                 font-size: 1rem
                 color: darken($accent, 5%)
                 margin: 0 auto 10px
                 +subtitle-style()
+                +breakpoint-mobile()
+                    font-size: 0.9rem
 
     .services-section
         display: flex
         justify-content: space-between
         margin: 80px 0 100px
         +breakpoint-mobile()
-            margin: 80px 0 50px
+            margin: 80px 0 0
         .left-header-wrapper
             width: 47.5%
             background-color: $light-background
@@ -116,6 +119,8 @@
                     display: flex
                     justify-content: space-between
                     +subtitle-style()
+                    +breakpoint-mobile()
+                        font-size: 0.85rem
                     padding-bottom: 20px
                     .price
                         letter-spacing: 0.125rem
@@ -143,14 +148,11 @@
         background-repeat: no-repeat
         background-size: auto 
         .reviews
-            width: max(60%, 450px) 
+            width: max(70%, 350px) 
             padding: 0
             text-align: center
             padding: 125px 35px 70px
             font-weight: normal
-            margin-top: 3%
-            +breakpoint-mobile()
-                margin-top: 10%
             .review-icon
                 max-height: 25px
             .quote
@@ -159,6 +161,10 @@
                 height: 175px
                 font-family: $font-main
                 font-size: 1.65rem
+                +breakpoint-tablet()
+                    font-size: 1.35rem
+                +breakpoint-mobile()
+                    font-size: 1.1rem
                 font-weight: 400
             .carousel-indicators
                 bottom: -25px
@@ -193,9 +199,18 @@
             color: $accent
             +subtitle-style()
             font-size: 0.9rem
+            +breakpoint-tablet()
+                font-size: 0.8rem
+            +breakpoint-mobile()
+                font-size: 0.75rem
         h1 
+            padding: 0 10px
             font-size: 2rem
             +title-style()
+            +breakpoint-tablet()
+                font-size: 1.75rem
+            +breakpoint-mobile()
+                font-size: 1.5rem
 
     h3
         font-size: 0.9rem
@@ -289,7 +304,7 @@
             +breakpoint-tablet()
                 width: 80%
             +breakpoint-mobile()
-                width: 90%
+                width: 85%
 
             background-color: $light-background
             h3
@@ -300,7 +315,11 @@
                 margin: 0 auto
                 font-size: 1.3rem
                 margin: 0 auto
-                width: max(70%, 350px)
+                width: max(70%, 300px)
+                +breakpoint-tablet()
+                    font-size: 1.15rem
+                +breakpoint-mobile()
+                    font-size: 0.95rem
         
     #widget-wrapper
         height: 710px
@@ -336,10 +355,17 @@
     background-size: cover
     .banner
         height: 350px
-        postion: relative
+        position: relative
+        +breakpoint-tablet()
+            height: 300px
+        +breakpoint-mobile()
+            height: 185px
+
         .banner-content
             position: absolute
             top: 33%
+            +breakpoint-mobile()
+                top: 50%
             left: 50%
             width: 100%
             -webkit-transform: translateX(-50%)
@@ -348,14 +374,18 @@
                 +title-style()
                 font-size: 3.75rem
                 text-align: center
+                +breakpoint-tablet()
+                    font-size: 2.75rem
                 +breakpoint-mobile()
-                    font-size: 3.2rem
+                    font-size: 1.6rem
             h5
                 +subtitle-style()
                 color: $accent
                 font-size: 1rem
+                +breakpoint-tablet()
+                    font-size: 0.8rem
                 +breakpoint-mobile()
-                    font-size: 0.75rem
+                    font-size: 0.52rem
       
     .contact-info
         width: 100%
@@ -363,7 +393,7 @@
         display: grid
         grid-template-columns: 3fr 1fr 3fr 1fr 3fr
         .info-item
-            padding: 25px 50px
+            padding: 25px 20px
             //color: white
             background-color: white
             -webkit-box-shadow: 0 4px 15px grey
@@ -402,6 +432,6 @@
 
         +breakpoint-tablet()
             grid-template-columns: 1fr
-            gap: 5%
-            padding-top: 0
+            gap: 25px
+            padding: 0px 40px 100px
             

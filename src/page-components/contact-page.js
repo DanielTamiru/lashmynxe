@@ -42,7 +42,7 @@ class ContactPage extends React.Component {
                 </section>
                 <section class="contact-info fade-in">
                     <ContactItem icon={<i class="fa fa-phone" aria-hidden="true"></i>} 
-                                 data="+1 (416) 985-2443"
+                                 data="+1 416-985-2443"
                                  description="Have questions? Call or message us! We'll get back to you ASAP"/>
                     <ContactItemSeperator/>
                     <ContactItem icon={<i class="fa fa-envelope" aria-hidden="true"></i>} 

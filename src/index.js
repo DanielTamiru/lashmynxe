@@ -20,7 +20,7 @@ class Header extends React.Component {
     componentDidMount() {
         $(window).scroll( () => {
             var top_of_element = $("#page-header").offset().top;
-            if (top_of_element > 100 && $(window).width() > 992) {
+            if (top_of_element > 100) {
                 $('#my-navbar').animate({opacity: 0}, {duration: 180, queue: false});
                 $('#my-navbar').animate({bottom: "10px"}, {duration: 180, queue: false});
 
