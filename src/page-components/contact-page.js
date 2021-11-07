@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { fadeIn, greyOutNavBarItem, highlightNavBarItem } from '../animations';
 
 function ContactItem(props) {
     return(
@@ -16,19 +16,11 @@ function ContactItemSeperator(props) {
 
 class ContactPage extends React.Component {
     componentDidMount() {
-        //fade-in animation
-        $('.fade-in').each(function(i) {
-            $(this).animate({'opacity':'1'}, 1200);
-        });
-
-        $(".navbar-item-name:contains('Contact')").each(function(i) {
-            $(this).css("color", "black");
-        });
+        fadeIn();
+        highlightNavBarItem("Contact");
     }
     componentWillUnmount() {
-        $(".navbar-item-name:contains('Contact')").each(function(i) {
-            $(this).css("color", "#747474");
-        });
+        greyOutNavBarItem("Contact");
     }
 
     render () {

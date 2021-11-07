@@ -1,8 +1,9 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from "react-router-dom";
+import { fadeIn, highlightNavBarItem, greyOutNavBarItem } from '../animations';
+import setmoreURLs from '../setmore-urls';
 
-// Banner -----------
+// ======= Banner =========
 function ButtonSpot(props) { return(<div class='button_spots'></div>);}
 function BookButton(props) {
     let spots = [];
@@ -26,6 +27,7 @@ function BookButton(props) {
         </div></span>
     );
 }
+
 class Banner extends React.Component {
     render() {
         return (
@@ -34,7 +36,6 @@ class Banner extends React.Component {
                     <h5 class="fade-in"><i class='fa fa-map-marker map-icon 1x' aria-hidden="true"></i>Brampton, ON</h5>
                     <h1 class="fade-in">{this.props.slogan}</h1>
                     <Link to="/appointments" style={{ textDecoration: 'none' }}><BookButton/></Link>
-                    
                 </div>
                 <img src="/assets/images/banner-background.png" alt="banner background" class="banner-background img-fluid"></img>
             </div>
@@ -43,7 +44,8 @@ class Banner extends React.Component {
 }
 
 
-// Services -----------
+// ======== Services =========
+
 class ServiceCard extends React.Component {
     render() {
         return( 
@@ -55,15 +57,18 @@ class ServiceCard extends React.Component {
                         <div class="price">{this.props.price}<span class="refill-label">{this.props.alt}</span></div>
                     </header>
                     <p class="card-text">{this.props.description}</p>
-                    <Link to="/appointments" style={{ textDecoration: 'none' }}><button class="service-button" onClick={(e) => this.props.onServiceChange(this.props.booking_url)}><span>Book </span></button></Link>
+                    <Link to="/appointments" 
+                          style={{ textDecoration: 'none' }}><button class="service-button" 
+                          onClick={() => this.props.onServiceChange(this.props.booking_url)}><span>Book</span></button>
+                    </Link>
                 </div>
             </div>
         );
     }
 }
+
 class Services extends React.Component {
     render () {
-        
         return (
             <div class="services-section">
                 <div class="left-header-wrapper">
@@ -80,7 +85,7 @@ class Services extends React.Component {
                                  name="Classics" 
                                  price="55 | 30"
                                  alt="Refill"
-                                 booking_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/scc8dfb2441b051321b4bf350afd53ad20e8ad430"
+                                 booking_url={setmoreURLs.classics.full}
                                  description="Applied on a 1:1 ratio, making for simple, beautiful, natural-looking lash extensions."/>
                     <hr></hr>
                     <ServiceCard onServiceChange={this.props.onServiceChange}
@@ -88,7 +93,7 @@ class Services extends React.Component {
                                  name="Hybrids" 
                                  price="65 | 40" 
                                  alt="Refill"
-                                 booking_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa"
+                                 booking_url={setmoreURLs.hybrids.full}
                                  description="A mixture of both classic lashes and volume lashes. Choose hybrid if you want the best of both worlds."/>
                     <hr></hr>
                     <ServiceCard onServiceChange={this.props.onServiceChange}
@@ -96,7 +101,7 @@ class Services extends React.Component {
                                  name="Volumes" 
                                  price="75 | 50"
                                  alt="Refill"
-                                 booking_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8444045a60102077d9f4dbe9a730cf76120fdf8c"
+                                 booking_url={setmoreURLs.volumes.full}
                                  description="Used to achieve a fuller, fluffier look. Anywhere between 2-8 ultra-fine extensions are fanned out and applied to a single natural lash."/>
                     <hr></hr>
                     <ServiceCard onServiceChange={this.props.onServiceChange}
@@ -104,7 +109,7 @@ class Services extends React.Component {
                                  name="Mega Volumes" 
                                  price="85 | 60"
                                  alt="Refill"
-                                 booking_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s88ff4c109de2a1ccaef03884cca3533719da8947"
+                                 booking_url={setmoreURLs.megaVolumes.full}
                                  description="Be bold! With this technique, 10 - 20 extensions are applied to each natural lash."/>
                     <hr></hr>
                     <ServiceCard onServiceChange={this.props.onServiceChange}
@@ -112,7 +117,7 @@ class Services extends React.Component {
                                  name="Lash Lift" 
                                  price="40 + 5"
                                  alt="Tint" 
-                                 booking_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/sa4ed0ebebe9916c4fee10102d55b2bdd66219d70"
+                                 booking_url={setmoreURLs.lashLift.regular}
                                  description="Curl all of your lashes upwards to leave them looking longer, and your eyes more open and bright"/>
                 </div>
             </div>
@@ -121,7 +126,9 @@ class Services extends React.Component {
 }
 
 
-// Reviews -----------
+
+// ========= Reviews ==========
+
 function ClientQuote(props) {
     return (
         <div class='float-in'>
@@ -130,6 +137,7 @@ function ClientQuote(props) {
         </div>
     );
 }
+
 function Reviews(props) {
         return (
             <div class="reviews-section">
@@ -145,8 +153,8 @@ function Reviews(props) {
                         </ol>
 
                         <div class="carousel-inner">
-                            <div class="quote carousel-item active"><ClientQuote review="I loved my lashes! Mary was so careful and gentle with each lash and her studio is so cute ♡ 10/10 would recommend!" reviewer="Angel"/></div>
                             <div class="quote carousel-item"><ClientQuote review="One of the best lash technicians I've been with; she's super hygienic and accommodating" reviewer="Cazandra"/></div>
+                            <div class="quote carousel-item active"><ClientQuote review="I loved my lashes! Mary was so careful and gentle with each lash and her studio is so cute ♡ 10/10 would recommend!" reviewer="Angel"/></div>
                             <div class="quote carousel-item"><ClientQuote review="Full, voluminous lashes and great service all for a reasonable price" reviewer="Kiara"/></div>
                         </div>
                     </div>
@@ -155,23 +163,15 @@ function Reviews(props) {
         );
 }
 
-/// ********
+/// ************************
 
 class HomePage extends React.Component {
     componentDidMount() {
-        //fade-in animation
-        $('.fade-in').each(function(i) {
-            $(this).animate({'opacity':'1'}, 1200);
-        });
-
-        $(".navbar-item-name:contains('Home')").each(function(i) {
-            $(this).css("color", "black");
-        });
+        fadeIn();
+        highlightNavBarItem("Home");
     }
     componentWillUnmount() {
-        $(".navbar-item-name:contains('Home')").each(function(i) {
-            $(this).css("color", "#747474");
-        });
+       greyOutNavBarItem("Home");
     }
 
     render () {

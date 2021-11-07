@@ -2,13 +2,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import $ from 'jquery';
+import { animateNavBar, floatIn } from './animations';
+import setmoreURLs from './setmore-urls';
 
-import Main from "./main"
+import HomePage from './page-components/home-page';
+import BookPage from './page-components/book-page';
+import ContactPage from './page-components/contact-page';
+
 import { BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-// Header -----------
+// ============= Header ===============
+
 function NavbarItem(props) {
     return (
         <div class="navbar-item">
@@ -18,29 +24,7 @@ function NavbarItem(props) {
 }
 class Header extends React.Component {
     componentDidMount() {
-        $(window).scroll( () => {
-            var top_of_element = $("#page-header").offset().top;
-            if (top_of_element > 100) {
-                $('#my-navbar').animate({opacity: 0}, {duration: 180, queue: false});
-                $('#my-navbar').animate({bottom: "10px"}, {duration: 180, queue: false});
-
-                $('#page-header').on({
-                        mouseenter: function () {
-                            $('#my-navbar').animate({opacity: 1}, {duration: 300, queue: false});
-                            $('#my-navbar').animate({bottom: "0px"}, {duration: 300, queue: false});    
-                        },
-                        mouseleave: function () {
-                            $('#my-navbar').animate({opacity: 0}, {duration: 300, queue: false});
-                            $('#my-navbar').animate({bottom: "10px"}, {duration: 300, queue: false});
-                        }
-                    }
-                );
-            } else {
-                $('#page-header').off();
-                $('#my-navbar').animate({bottom: "0px"}, {duration: 250, queue: false});
-                $('#my-navbar').animate({opacity: 1}, {duration: 250, queue: false});
-            }
-        });        
+        animateNavBar();
     }
 
     render () {
@@ -64,35 +48,66 @@ class Header extends React.Component {
     }
 }
 
-// Footer -----------
+// ============= Main ===============
+
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.handleServiceChange = this.handleServiceChange.bind(this);
+    this.getCurrentService = this.getCurrentService.bind(this);
+    this.state = {chosenServiceUrl: setmoreURLs.default};
+  }
+
+  handleServiceChange(newURL) {
+    this.setState({chosenServiceUrl: newURL});
+  }
+
+  getCurrentService() {
+    return this.state.chosenServiceUrl;
+  }
+
+  componentDidMount() {
+    floatIn();
+  }
+
+  render() {
+    return (
+      <Switch>
+        <Route exact path='/'  render={() => (
+          <HomePage onServiceChange={this.handleServiceChange} getCurrentService={this.getCurrentService}/>
+        )}/>
+        <Route exact path='/appointments'  render={() => (
+          <BookPage onServiceChange={this.handleServiceChange} getCurrentService={this.getCurrentService}/>
+        )}/>
+        <Route exact path='/contact' component={ContactPage}></Route>
+      </Switch>
+    );
+  }
+}
+
+// ============= Footer ===============
+
 function Footer(props) {
-    var nothing = ""
     return (
         <div id="page-footer">
             <div class="social-media-wrapper">
-                <a href="https://www.instagram.com/lashmynxe/">{nothing}<i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/lashmynxe/">
+                    <span style={{display: 'none'}}>Instagram Link</span>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     );
 }
 
-
-class App extends React.Component {
-    render () {
-        return (
-            <>
-                <Header/>
-                <Main/>
-                <Footer/>
-            </>
-        );
-    }
-}
-
+// *******************************
 
 ReactDOM.render((
   <BrowserRouter>
-    <App />
+    <Header/>
+    <Main/>
+    <Footer/>
   </BrowserRouter>
   ), document.getElementById('root')
 );

@@ -1,5 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
+import { fadeIn, greyOutNavBarItem, highlightNavBarItem, scrollToSetMoreWidget } from '../animations';
+import setmoreURLs from '../setmore-urls';
+
 const default_url = "https://lashmynxe.setmore.com";
 
 class ServiceMiniCard extends React.Component {
@@ -10,22 +12,21 @@ class ServiceMiniCard extends React.Component {
                     <img src={this.props.imgsrc} alt="Lash Pic"></img>
                     <h5>{this.props.name}</h5>
                 </header>
+
                 <div class="pricing">
-                    <div class="price-box" onClick={(e) => {
+                    <div class="price-box" onClick={() => {
                         this.props.onServiceChange(this.props.url);
-                        let widget_position = $("#widget-wrapper").offset();
-                        widget_position.top -= 20;
-                        $("html, body").animate({scrollTop:  widget_position.top});
+                        scrollToSetMoreWidget();
                     }}>
                         <div>{this.props.main}</div>
                         <div class="price"><b>{this.props.price}</b></div>
                     </div>
+    
                     <hr></hr>
+
                     <div class="price-box" onClick={(e) => {
                         this.props.onServiceChange(this.props.alt_url);
-                        let widget_position = $("#widget-wrapper").offset();
-                        widget_position.top -= 20;
-                        $("html, body").animate({scrollTop:  widget_position.top});
+                        scrollToSetMoreWidget();
                     }}>
                         <div>{this.props.alt}</div>
                         <div><b>{this.props.alt_price}</b></div>
@@ -48,24 +49,15 @@ class SetMoreWidget extends React.Component {
 
 class BookPage extends React.Component {
     componentDidMount() {
-        //fade-in animation
-        $('.fade-in').each(function(i) {
-            $(this).animate({'opacity':'1'}, 1200);
-        });
+        fadeIn();
+        highlightNavBarItem("Book Appointment");
 
-        $(".navbar-item-name:contains('Book Appointment')").each(function(i) {
-            $(this).css("color", "black");
-        });
-
-        if (this.props.currentServiceUrl !== default_url) {
-            let setmore_widget = document.getElementById("widget-wrapper");
-            setmore_widget.scrollIntoView();
+        if (this.props.getCurrentService() !== setmoreURLs.default) {
+            scrollToSetMoreWidget();
         }
     }
     componentWillUnmount() {
-        $(".navbar-item-name:contains('Book Appointment')").each(function(i) {
-            $(this).css("color", "#747474");
-        });
+        greyOutNavBarItem("Book Appointment")
         this.props.onServiceChange(default_url);
     }
 
@@ -82,32 +74,32 @@ class BookPage extends React.Component {
                     <div class="mini-price-list">
                         <ServiceMiniCard name="Classics" 
                                          onServiceChange={this.props.onServiceChange} 
-                                         url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/scc8dfb2441b051321b4bf350afd53ad20e8ad430"
-                                         alt_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/sf1ad05eabc49737eb01cb1bdcb8b44d876e7da0b"
+                                         url={setmoreURLs.classics.full}
+                                         alt_url={setmoreURLs.classics.refill}
                                          imgsrc="/assets/images/lashpics/lashpic-classics-alt.png" 
                                          main="Set:" price="$55" alt="Refill:" alt_price="$30"/>
                         <ServiceMiniCard name="Hybrids"
                                          onServiceChange={this.props.onServiceChange}
-                                         url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8251a1ce3dfa4a0c42a18dbb5b2e8af1736d32aa"
-                                         alt_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s9e94b8a67e79d6aef979ef4d16e28ac1e3856939"
+                                         url={setmoreURLs.hybrids.full}
+                                         alt_url={setmoreURLs.hybrids.refill}
                                          imgsrc="/assets/images/lashpics/lashpic-hybrid-alt.png" 
                                          main="Set:" price="$65" alt="Refill:" alt_price="$40" />
                         <ServiceMiniCard name="Volumes"
                                          onServiceChange={this.props.onServiceChange}
-                                         url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s8444045a60102077d9f4dbe9a730cf76120fdf8c"
-                                         alt_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s959b189522291fc784d7a8a5812829eae5c85ba2"
+                                         url={setmoreURLs.volumes.full}
+                                         alt_url={setmoreURLs.volumes.refill}
                                          imgsrc="/assets/images/lashpics/lashpic-volumes-alt.png"
                                          main="Set:" price="$75" alt="Refill:" alt_price="$50"/>
                         <ServiceMiniCard name="Mega Volumes"
                                          onServiceChange={this.props.onServiceChange}
-                                         url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s88ff4c109de2a1ccaef03884cca3533719da8947"
-                                         alt_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/s83d0031305fe2d0e928a13b8e2b1faec60535170"
+                                         url={setmoreURLs.megaVolumes.full}
+                                         alt_url={setmoreURLs.megaVolumes.refill}
                                          imgsrc="/assets/images/lashpics/lashpic-mega-alt.jpg" 
                                          main="Set:" price="$85" alt="Refill:" alt_price="$60"/>
                         <ServiceMiniCard name="Lash Lift"
                                          onServiceChange={this.props.onServiceChange}
-                                         url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/sa4ed0ebebe9916c4fee10102d55b2bdd66219d70"
-                                         alt_url="http://my.setmore.com/bookingpage/b26a0c65-054b-441f-8594-c5b6338ab884/services/sc26f87016e8ec7c1eeaf14a3297e85863e1a9623"
+                                         url={setmoreURLs.lashLift.regular}
+                                         alt_url={setmoreURLs.lashLift.withTint}
                                          imgsrc="/assets/images/lashpics/lashpic-lift-alt.png" 
                                          main="Lift:" price="$40" alt="Lift & Tint:" alt_price="$45"/>
                     </div>
@@ -131,7 +123,7 @@ class BookPage extends React.Component {
                 
                 <h3 class="float-in">Book Now</h3>
                 <hr class="fancy"></hr>
-                <SetMoreWidget currentServiceUrl={this.props.currentServiceUrl}/>
+                <SetMoreWidget currentServiceUrl={this.props.getCurrentService()}/>
             </div>
         );
     }
