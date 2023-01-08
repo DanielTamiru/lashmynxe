@@ -1,4 +1,22 @@
-<<<<<<< HEAD
+# LASHMYNXE
+Lashmynxe is a eyelash studio in Brampton, Ontario. The owner and lead technician, [Mary Andres](https://www.linkedin.com/in/mary-andres-a0726b1b5/), asked me to make her a website for her home business where customers can learn about the services she offers and book appointments. The website has 3 pages:
+
+## Homepage
+<img width="1680" alt="Screen Shot 2023-01-08 at 15 05 56" src="https://user-images.githubusercontent.com/46784904/211216781-f2d5c8df-bf8e-4b87-9b9f-f38289af5f0c.png">
+
+![ezgif-3-9bb6626456](https://user-images.githubusercontent.com/46784904/211216557-447ac367-ddff-4169-9c2b-14bbbfafc3cd.gif)
+
+## Booking page
+<img width="1680" alt="Screen Shot 2023-01-08 at 15 11 28" src="https://user-images.githubusercontent.com/46784904/211218399-76be0a0d-99ec-40eb-bf22-dc39012a2fb8.png">
+
+![ezgif-2-2db668cc9f](https://user-images.githubusercontent.com/46784904/211218377-4aa58968-c77a-46b9-b40d-3a414defcaa9.gif)
+
+
+## Contact page
+<img width="1680" alt="Screen Shot 2023-01-08 at 15 06 44" src="https://user-images.githubusercontent.com/46784904/211216807-335720e6-fb67-4a45-9ec3-3ecdc8fce8d5.png">
+
+<hr/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
