@@ -15,6 +15,7 @@
 ## Contact page
 <img width="1680" alt="Screen Shot 2023-01-08 at 15 06 44" src="https://user-images.githubusercontent.com/46784904/211216807-335720e6-fb67-4a45-9ec3-3ecdc8fce8d5.png">
 
+
 <hr/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
