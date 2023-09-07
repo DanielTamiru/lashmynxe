@@ -1,5 +1,5 @@
 # L A S H M Y N X E
-[Lashmynxe](https://lashmynxe.com/) is a eyelash studio in Brampton, Ontario. The owner and lead technician, [Mary Andres](https://www.linkedin.com/in/mary-andres-a0726b1b5/), asked me to make her a website for her home business where customers can learn about the services she offers and book appointments (through integration with Setmore). The website has 3 pages:
+[Lashmynxe](https://lashmynxe.com/) is an eyelash studio in Brampton, Ontario. The owner and lead technician, [Mary Andres](https://www.linkedin.com/in/mary-andres-a0726b1b5/), asked me to make her a website for her home business where customers can learn about the services she offers and book appointments (through integration with Setmore). The website has 3 pages:
 
 ## Homepage
 <img width="1680" alt="Screen Shot 2023-01-08 at 15 05 56" src="https://user-images.githubusercontent.com/46784904/211216781-f2d5c8df-bf8e-4b87-9b9f-f38289af5f0c.png">
